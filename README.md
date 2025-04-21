@@ -116,6 +116,17 @@ Space debris data was collected from a CSV file containing debris counts by coun
 
 Missing values were handled during the preprocessing stage to maintain consistency across datasets. In most cases, rows with missing country or year information were removed. Debris count were filled with zero only when the absence of data indicated no recorded activity. This approach minimized bias while allowing for complete comparisons across countries.
 
+**Selection of Top 20 Countries**
+
+To explore the relationship between space debris and the global leadership race, the analysis focused on countries that are most likely to compete in this race. These countries were identified based on their rankings in four key indicators: GDP, trade volume, military size, and HDI. The top 20 performers in each category were selected to represent the group of potential global leaders.
+
+**Data Normalization**
+
+To improve comparability across variables with different scales, normalization techniques were applied where necessary. In particular, a log10(1 + x) transformation was used for the space debris dataset to reduce skewness caused by extreme values. This allowed for clearer visualizations and more balanced interpretations without distorting the underlying data.
+
+**Normalization in Correlation Analysis**
+
+Although no normalization was applied during the individual visualizations of GDP, trade volume, and military size, normalization was necessary when constructing the correlation matrix. This ensured that variables with large numeric ranges did not disproportionately influence the results. Standard scaling or appropriate transformations were used to place all variables on a comparable scale, allowing for more accurate and interpretable correlation values.
 
 # Visualization
 
@@ -151,7 +162,6 @@ The bar chart visualizes the top 20 countries by total active military personnel
 
 The bar chart illustrates the number of space debris contributions per country, scaled using the log10(1 + x) transformation to improve visibility of lower values. The dataset was filtered to exclude the European Space Agency, as it is not a sovereign state. Countries were sorted by total recorded debris, and the y-axis represents the transformed values to allow clearer comparison across a wide numerical range.
 
-
 <img width="1189" alt="Screenshot 2025-04-21 at 15 11 58" src="https://github.com/user-attachments/assets/0f069989-32cd-4c14-9495-894c5d9320d7" />
 
 
@@ -159,5 +169,4 @@ The bar chart illustrates the number of space debris contributions per country, 
 
 The heatmap visualizes the Pearson correlation coefficients between key variables such as GDP, trade volume, military size, HDI, and space debris. Only numeric columns were included in the correlation matrix to ensure accurate analysis. High positive values (e.g., GDP–Trade: 0.86) suggest strong associations, while negative values (e.g., Military–HDI: –0.45) indicate inverse relationships. This matrix helps identify patterns and dependencies between indicators relevant to global leadership and space activity.
 
-
-<img width="767" alt="Screenshot 2025-04-21 at 15 51 21" src="https://github.com/user-attachments/assets/7c30b46a-e552-4d2b-9523-6c124451cb6f" />
+<img width="767" alt="Screenshot 2025-04-21 at 16 03 15" src="https://github.com/user-attachments/assets/f7c4f7e1-d764-4806-abcc-338882203d9d" />
