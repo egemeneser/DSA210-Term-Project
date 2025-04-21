@@ -170,3 +170,56 @@ The bar chart illustrates the number of space debris contributions per country, 
 The heatmap visualizes the Pearson correlation coefficients between key variables such as GDP, trade volume, military size, HDI, and space debris. Only numeric columns were included in the correlation matrix to ensure accurate analysis. High positive values (e.g., GDP–Trade: 0.86) suggest strong associations, while negative values (e.g., Military–HDI: –0.45) indicate inverse relationships. This matrix helps identify patterns and dependencies between indicators relevant to global leadership and space activity.
 
 <img width="767" alt="Screenshot 2025-04-21 at 16 03 15" src="https://github.com/user-attachments/assets/f7c4f7e1-d764-4806-abcc-338882203d9d" />
+
+
+# Hypothesis Testing
+
+**Analysis of GDP vs Space Debris**
+
+Null Hypothesis (H₀): There is no correlation between a country’s GDP and the amount of space debris it contributes.
+Alternative Hypothesis (H₁): There is a significant correlation between GDP and space debris contribution.
+A two-sided Spearman correlation test was used to evaluate the hypothesis at a 0.05 significance level.
+
+Results:
+Spearman Correlation: 0.6434
+P-Value: < 0.01
+Reject the null hypothesis. There is a statistically significant moderate positive correlation between GDP and space debris.
+
+**Analysis of Trade Volume vs Space Debris**
+
+Null Hypothesis (H₀): Trade volume is not associated with the amount of space debris.
+Alternative Hypothesis (H₁): Countries with higher trade volume tend to produce more space debris.
+Spearman correlation analysis was conducted.
+
+Results:
+Spearman Correlation: 0.4838
+P-Value: < 0.01
+Reject the null hypothesis. Trade volume shows a statistically significant positive correlation with space debris.
+
+**Analysis of Military Size vs Space Debris**
+
+Null Hypothesis (H₀): There is no link between military personnel size and space debris.
+Alternative Hypothesis (H₁): Countries with larger military personnel contribute more to space debris.
+Tested with Spearman correlation.
+
+Results:
+Spearman Correlation: 0.5901
+P-Value: < 0.01
+Reject the null hypothesis. The test indicates a strong and statistically significant positive correlation between military size and space debris.
+
+**Analysis of HDI vs Space Debris**
+
+Null Hypothesis (H₀): Human Development Index is unrelated to space debris contribution.
+Alternative Hypothesis (H₁): There is a significant association between HDI and space debris.
+Spearman correlation was applied.
+
+Results:
+Spearman Correlation: -0.3451
+P-Value: 0.54
+Fail to reject the null hypothesis. There is no statistically significant relationship between HDI and space debris.
+
+<img width="1200" alt="Screenshot 2025-04-22 at 00 00 30" src="https://github.com/user-attachments/assets/59026993-7057-4f09-9f9a-c2dd3422b0b8" />
+
+**Conclusion Summary**
+
+Among the four tested indicators, GDP, Trade, and especially Military size showed significant positive correlations with space debris, while HDI did not. These findings suggest that aspects of global leadership competition—particularly economic and military power—are likely contributors to increasing orbital debris.
