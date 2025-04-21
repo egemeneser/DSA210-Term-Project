@@ -1,6 +1,7 @@
 # DSA210-Term-Project
 
-**Project Overview**
+
+# Project Overview
 
 I am a Computer Science student from Sabanci University, and this is my Data Science Term Project. During the term, I am planning to analyse the relationship between Space Debris and the global leadership competition among various countries. 
 
@@ -47,13 +48,9 @@ Data which are going to be taken from reliable sources will help to evaluate the
 The dataset of this project consists of several records.
 -	Space Debris Share
 -	GDP and Economic Growth
--	Military Spending and Capabilities
--	Technological Innovation
--	Political Influence
+-	Military Spending
 -	Trade Statistics
--	Investments in Infrastructure and Development Projects
--	Participation in International Organizations
--	Educational Influence
+-	Educational Influence (Human Development Index)
 
 
 **Tools and Technologies**
@@ -89,3 +86,78 @@ At the end of the project, I expect to answer the following questions:
 -	Which countries are in the Global Leadership Race?
 -	Which countries contributes to the Space Debris?
 -	Is there any relationship between the Space Debris and Global Leadership Race?
+
+
+# Data Collection
+
+In order to analyze the global leadership race and its relationship with space debris, we collected data from multiple reliable sources. Each dataset was processed using Python and Pandas to ensure consistency and accuracy. Below is a summary of how each dataset was handled:
+
+**GDP and Economic Growth**
+
+GDP data was imported from an Excel file and reshaped using the melt function to create a long-format table with country and year values. Column names were standardized, and only the selected year range was retained. This dataset reflects the economic size of each country.
+
+**Trade Volume**
+
+Trade statistics were collected from a structured Excel file. After selecting valid entries and renaming columns, the data was reshaped into long format. Year filtering was applied for consistency with other datasets.
+
+**Human Development Index**
+
+HDI values were loaded from an Excel file and cleaned by renaming columns and removing formatting inconsistencies. Since the dataset did not include yearly values, the available index scores were used directly to indicate development levels.
+
+**Military Data**
+
+Military personnel data was extracted from an Excel file. Column names were cleaned, and the dataset was filtered to include only the years of interest. This data provides a quantitative measure of military capacity.
+
+**Space Debris**
+
+Space debris data was collected from a CSV file containing debris counts by country. Non-country entities such as the European Space Agency were excluded. A log transformation was applied to improve visual readability due to large value disparities.
+
+**Handling Missing Values**
+
+Missing values were handled during the preprocessing stage to maintain consistency across datasets. In most cases, rows with missing country or year information were removed. Debris count were filled with zero only when the absence of data indicated no recorded activity. This approach minimized bias while allowing for complete comparisons across countries.
+
+
+# Visualization
+
+**GDP and Economic Growth**
+
+The bar chart illustrates the top 20 countries by total Gross Domestic Product (GDP) accumulated between 2000 and 2016. The values were calculated by summing up the annual GDP figures for each country within the selected period. Countries classified as regions or income groups (e.g., "High income", "Sub-Saharan Africa") were excluded to ensure that the analysis includes only individual sovereign states. The GDP values are presented on a scientific scale (sci notation) to enhance readability due to the large numeric range.
+
+<img width="1189" alt="Screenshot 2025-04-21 at 15 14 36" src="https://github.com/user-attachments/assets/85d2dba8-1ec5-4bc6-83ed-abacb7b73fa9" />
+
+
+**Trade Volume**
+
+The bar chart displays the top 20 countries by total trade volume between 2000 and 2016. The data was preprocessed by removing region-based or non-country entities to ensure that only sovereign countries were included. Total trade values were obtained by summing yearly trade data for each country. The chart uses scientific notation on the y-axis to accommodate the wide range of trade values, improving clarity and comparability across countries.
+
+<img width="1189" alt="Screenshot 2025-04-21 at 15 46 13" src="https://github.com/user-attachments/assets/b1d8c67d-65a9-47ea-9852-67e3ab7df9b2" />
+
+
+**Human Development Index**
+
+The strip plot presents the top 20 countries with the highest average Human Development Index (HDI) scores between 2000 and 2016. Countries were ranked based on their overall HDI values, and only the top performers were included. The plot uses dot markers to visualize country-level differences in human development on a scale from 0 to 1000. This visual allows for quick comparison of development levels among leading nations while preserving precise value distribution.
+
+<img width="1190" alt="Screenshot 2025-04-21 at 15 05 21" src="https://github.com/user-attachments/assets/3de34078-3294-47e4-bdbf-dfd805ab40e9" />
+
+
+**Military Data**
+
+The bar chart visualizes the top 20 countries by total active military personnel for the most recent year available in the dataset (2016). The data was filtered to include only the latest year and countries with the highest troop numbers. Countries were then sorted in descending order based on personnel count. This representation highlights the distribution of military power across nations and is useful for comparing defense capacity in the context of global influence.
+
+<img width="1188" alt="Screenshot 2025-04-21 at 15 47 30" src="https://github.com/user-attachments/assets/0ccb531e-542a-4d8b-98f8-e7d594e977db" />
+
+
+**Space Debris**
+
+The bar chart illustrates the number of space debris contributions per country, scaled using the log10(1 + x) transformation to improve visibility of lower values. The dataset was filtered to exclude the European Space Agency, as it is not a sovereign state. Countries were sorted by total recorded debris, and the y-axis represents the transformed values to allow clearer comparison across a wide numerical range.
+
+
+<img width="1189" alt="Screenshot 2025-04-21 at 15 11 58" src="https://github.com/user-attachments/assets/0f069989-32cd-4c14-9495-894c5d9320d7" />
+
+
+**Correlation Matrix by Top 20 Countries**
+
+The heatmap visualizes the Pearson correlation coefficients between key variables such as GDP, trade volume, military size, HDI, and space debris. Only numeric columns were included in the correlation matrix to ensure accurate analysis. High positive values (e.g., GDP–Trade: 0.86) suggest strong associations, while negative values (e.g., Military–HDI: –0.45) indicate inverse relationships. This matrix helps identify patterns and dependencies between indicators relevant to global leadership and space activity.
+
+
+<img width="767" alt="Screenshot 2025-04-21 at 15 51 21" src="https://github.com/user-attachments/assets/7c30b46a-e552-4d2b-9523-6c124451cb6f" />
