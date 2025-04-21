@@ -155,7 +155,7 @@ The bar chart illustrates the number of space debris contributions per country, 
 <img width="1189" alt="Screenshot 2025-04-21 at 15 11 58" src="https://github.com/user-attachments/assets/0f069989-32cd-4c14-9495-894c5d9320d7" />
 
 
-**Correlation Matrix by Top 20 Countries**
+**Correlation Matrix**
 
 The heatmap visualizes the Pearson correlation coefficients between key variables such as GDP, trade volume, military size, HDI, and space debris. Only numeric columns were included in the correlation matrix to ensure accurate analysis. High positive values (e.g., GDP–Trade: 0.86) suggest strong associations, while negative values (e.g., Military–HDI: –0.45) indicate inverse relationships. This matrix helps identify patterns and dependencies between indicators relevant to global leadership and space activity.
 
