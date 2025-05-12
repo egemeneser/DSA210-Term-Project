@@ -165,6 +165,18 @@ The bar chart illustrates the number of space debris contributions per country, 
 <img width="1189" alt="Screenshot 2025-04-21 at 15 11 58" src="https://github.com/user-attachments/assets/0f069989-32cd-4c14-9495-894c5d9320d7" />
 
 
+**Total Number of Space Debris**
+
+This bar chart displays the annual space debris count from 1958 to 2024. The x-axis shows each year and the y-axis shows the number of debris objects tracked. Each bar’s height represents the total debris count for that specific year.
+
+![Unknown-3](https://github.com/user-attachments/assets/64369c2a-4cd4-4f5e-be0e-e9e32861f1e6)
+
+
+The chart below displays the annual number of debris objects tracked in low Earth orbit from 1958 through 2024. Two linear trend lines are overlaid: the red line fits the period 1958–1996 and the blue line covers 1997–2024. This dual‐phase approach highlights how debris accumulation accelerated rapidly in the first period and then continued to grow at a slower rate afterward. By comparing these trends, we can clearly see a change in growth dynamics around 1996.
+
+![Unknown-2](https://github.com/user-attachments/assets/bf18a29e-3a5c-4791-bedf-97b4240b4716)
+
+
 **Correlation Matrix**
 
 The heatmap visualizes the Pearson correlation coefficients between key variables such as GDP, trade volume, military size, HDI, and space debris. Only numeric columns were included in the correlation matrix to ensure accurate analysis. High positive values (e.g., GDP–Trade: 0.86) suggest strong associations, while negative values (e.g., Military–HDI: –0.45) indicate inverse relationships. This matrix helps identify patterns and dependencies between indicators relevant to global leadership and space activity.
