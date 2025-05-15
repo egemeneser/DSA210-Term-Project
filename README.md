@@ -174,7 +174,7 @@ This bar chart displays the annual space debris count from 1958 to 2024. The x-a
 
 The chart below displays the annual number of debris objects tracked in low Earth orbit from 1958 through 2024. Two linear trend lines are overlaid: the red line fits the period 1958–1996 and the blue line covers 1997–2024. This dual‐phase approach highlights how debris accumulation accelerated rapidly in the first period and then continued to grow at a slower rate afterward. By comparing these trends, we can clearly see a change in growth dynamics around 1996.
 
-![Unknown-2](https://github.com/user-attachments/assets/bf18a29e-3a5c-4791-bedf-97b4240b4716)
+![Unknown-4](https://github.com/user-attachments/assets/0841edb1-0fac-4ded-be32-47bb98b0e9ee)
 
 
 **Correlation Matrix**
