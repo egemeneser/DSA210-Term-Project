@@ -237,3 +237,79 @@ Fail to reject the null hypothesis. There is no statistically significant relati
 **Conclusion Summary**
 
 Among the four tested indicators, GDP, Trade, and especially Military size showed significant positive correlations with space debris, while HDI did not. These findings suggest that aspects of global leadership competition—particularly economic and military power—are likely contributors to increasing orbital debris.
+
+
+# Machine Learning Part
+
+As part of this project, we applied all supervised machine learning models introduced in the lecture slides. These included:
+
+k-Nearest Neighbors (kNN)
+Linear Regression
+Support Vector Regression (SVR)
+Random Forest Regressor
+Neural Network (MLPRegressor)
+Each model was trained on post-1996 space debris data and evaluated using the R² score (coefficient of determination), which measures how well the model explains the variance in the target variable.
+
+The table below shows the R² values and yearly predictions (2025–2034) for each model:
+
+| Model             | R² Score | Notes                                                                 |
+| ----------------- | -------- | --------------------------------------------------------------------- |
+| kNN (k=3)         | 0.9766   | High R² but predicted the same debris value for every future year.    |
+| Linear Regression | 0.6599   | Low R², failed to capture overall trend.                              |
+| SVR               | -0.1819  | Negative R², model performed worse than a horizontal line.            |
+| Random Forest     | 0.9936   | High R² but returned a **single constant** value across all years.    |
+| Neural Network    | -0.0920  | Failed to converge, generated increasing but unrealistic predictions. |
+
+Although kNN and Random Forest had the highest R² scores, we decided not to use them in the final model. The reason is that both predicted static (non-changing) debris values for 2025–2034, which is not realistic or useful for our research question.
+
+On the other hand, Linear Regression, SVR, and MLP showed low or even negative R² scores, meaning they could not model the decreasing or changing trend in the data effectively.
+
+**Final Decision**
+Due to these limitations, we switched to alternative modeling approaches, including Polynomial Regression and Piecewise Linear Regression, which provided both realistic and statistically strong forecasts.
+
+These models not only offered interpretable trends, but also allowed us to project country-level debris shares using proportional allocation.
+
+After identifying the limitations of standard ML models, we evaluated two alternative regression approaches:
+
+Piecewise Linear Regression with a breakpoint at 1996
+Polynomial Regression with degree = 3
+To compare these models, we calculated their R² scores based on the full historical dataset:
+
+R² (Polynomial degree=3):  0.7857  
+R² (Piecewise at 1999):    0.7007  
+
+Based on the R² results, we chose Polynomial Regression (degree=3) as the final model. It provided:
+
+- A strong balance between flexibility and interpretability
+- Realistic forecasts for 2025–2034
+- Compatibility with proportional country-level debris distribution
+This model became the foundation for all further analyses and visualizations in this project.
+
+After predicting the total debris count for 2025–2034 using the selected Polynomial Regression model, we aimed to estimate how much of that debris would be attributed to each country.
+
+To do this, we used the SpaceDebrisStats.csv dataset, which contains each country's total space debris count. We calculated each country’s proportional share of total debris and assumed that this ratio remains constant over the next 10 years.
+
+Then, for each year from 2025 to 2034, we:
+
+- Multiplied the forecasted global total by each country’s proportion,
+- Generated year-by-year debris predictions per country,
+- Created a combined long-format table of yearly predictions for all countries.
+  
+Finally, we ranked the countries by total forecasted debris between 2025 and 2034 and selected the top 3 contributors. The chart below visualizes the projected debris count for:
+
+- Russian Federation
+- United States
+- China
+These countries are expected to maintain the highest share of debris in orbit if current trends continue.
+
+![Unknown-5](https://github.com/user-attachments/assets/4cef37b7-10a4-4e33-aa9d-bf3457d0e3f4)
+
+This visualization clearly illustrates how space debris is projected to evolve among the leading spacefaring nations.
+
+![Unknown-6](https://github.com/user-attachments/assets/188f5d94-b8b7-4e1b-8e27-5982ab3ec326)
+
+This chart shows the actual number of space debris from 1958 to 2024 (blue) and the predicted values for 2025–2034 (orange), using a degree-3 Polynomial Regression model.
+
+We can see a decrease in debris in recent years, but the model predicts a new increase after 2027 if current trends continue.
+
+This helps visualize the past and future trend of global space debris.
