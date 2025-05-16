@@ -248,7 +248,7 @@ Linear Regression
 Support Vector Regression (SVR)
 Random Forest Regressor
 Neural Network (MLPRegressor)
-Each model was trained on post-1996 space debris data and evaluated using the R² score (coefficient of determination), which measures how well the model explains the variance in the target variable.
+Each model was trained on post-1999 space debris data and evaluated using the R² score (coefficient of determination), which measures how well the model explains the variance in the target variable.
 
 The table below shows the R² values and yearly predictions (2025–2034) for each model:
 
@@ -271,7 +271,7 @@ These models not only offered interpretable trends, but also allowed us to proje
 
 After identifying the limitations of standard ML models, we evaluated two alternative regression approaches:
 
-Piecewise Linear Regression with a breakpoint at 1996
+Piecewise Linear Regression with a breakpoint at 1999
 Polynomial Regression with degree = 3
 To compare these models, we calculated their R² scores based on the full historical dataset:
 
@@ -313,3 +313,18 @@ This chart shows the actual number of space debris from 1958 to 2024 (blue) and 
 We can see a decrease in debris in recent years, but the model predicts a new increase after 2027 if current trends continue.
 
 This helps visualize the past and future trend of global space debris.
+
+# Limitations and Future Work
+
+**Limitations**
+
+- The predictions are based only on historical debris counts and a constant country share assumption. This does not reflect future political, technological, or environmental changes.
+- The models do not include unexpected space events, such as satellite explosions or major launches.
+- Country-level debris is calculated using fixed proportions from past data. This ignores possible policy changes or space program developments.
+- The models assume clean, uninterrupted yearly trends. In reality, data irregularities, missing years, or anomalies may affect debris behavior.
+
+**Future Work**
+
+- Integrate more features into the model, such as number of launches, satellite failures, or international space activity.
+- Update the country proportions dynamically based on forecasted military, trade, or GDP data instead of using a fixed share.
+- Explore collaborative datasets or real-time satellite tracking APIs to improve prediction accuracy and monitor live updates.
